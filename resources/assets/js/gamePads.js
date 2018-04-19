@@ -11,6 +11,11 @@ window.addEventListener("gamepadconnected", function(e) {
 
 });
 
+window.Echo.join('new-player')
+  .here((user) => {
+    console.log('new user logged!')
+  });
+
 function updateLoop() {
 
   var gp = navigator.getGamepads()[0];
@@ -31,6 +36,7 @@ function updateLoop() {
   } else {
     document.body.style.backgroundColor = "white";
   }
+
 
   requestAnimationFrame(updateLoop);
 
