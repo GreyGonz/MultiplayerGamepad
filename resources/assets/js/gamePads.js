@@ -1,5 +1,12 @@
 var ball;
 
+console.log('Loaded')
+
+window.Echo.join('new-player')
+    .here((user) => {
+      console.log('New player in ' + user.name)
+    })
+
 window.addEventListener("gamepadconnected", function(e) {
 
   ball = document.getElementById("ball");
@@ -32,11 +39,6 @@ function updateLoop() {
   } else {
     document.body.style.backgroundColor = "white";
   }
-
-  window.Echo.join('new-player')
-    .here((user) => {
-      console.log('new user logged!')
-    });
 
   requestAnimationFrame(updateLoop);
 

@@ -78,6 +78,12 @@ module.exports = __webpack_require__(48);
 
 var ball;
 
+console.log('Loaded');
+
+window.Echo.join('new-player').here(function (user) {
+  console.log('New player in ' + user.name);
+});
+
 window.addEventListener("gamepadconnected", function (e) {
 
   ball = document.getElementById("ball");
@@ -86,10 +92,6 @@ window.addEventListener("gamepadconnected", function (e) {
   ball2.style.backgroundColor = "blue";
   document.getElementsByTagName("p")[0].innerHTML = e.gamepad.id;
   updateLoop();
-});
-
-window.Echo.join('new-player').here(function (user) {
-  console.log('new user logged!');
 });
 
 function updateLoop() {
