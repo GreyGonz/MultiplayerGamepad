@@ -3,8 +3,11 @@ var ball;
 console.log('Loaded')
 
 window.Echo.join('new-player')
-    .here((user) => {
-      console.log('New player in ' + user.name)
+    .here((users) => {
+      console.table(users)
+    })
+    .joining((user) => {
+      console.log('New user logged in ' + user.name)
     })
 
 window.addEventListener("gamepadconnected", function(e) {

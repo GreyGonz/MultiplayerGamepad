@@ -80,8 +80,10 @@ var ball;
 
 console.log('Loaded');
 
-window.Echo.join('new-player').here(function (user) {
-  console.log('New player in ' + user.name);
+window.Echo.join('new-player').here(function (users) {
+  console.table(users);
+}).joining(function (user) {
+  console.log('New user logged in ' + user.name);
 });
 
 window.addEventListener("gamepadconnected", function (e) {
