@@ -11,10 +11,6 @@ window.addEventListener("gamepadconnected", function(e) {
 
 });
 
-window.Echo.join('new-player')
-  .here((user) => {
-    console.log('new user logged!')
-  });
 
 function updateLoop() {
 
@@ -37,6 +33,10 @@ function updateLoop() {
     document.body.style.backgroundColor = "white";
   }
 
+  window.Echo.join('new-player')
+    .here((user) => {
+      console.log('new user logged!')
+    });
 
   requestAnimationFrame(updateLoop);
 
